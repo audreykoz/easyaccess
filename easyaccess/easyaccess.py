@@ -21,6 +21,7 @@ import easyaccess.eautils.fun_utils as fun_utils
 import easyaccess.eaparser as eaparser
 from easyaccess.eautils.import_utils import Import
 from easyaccess.eautils.ea_utils import *
+from easyaccess.commands import Undocumented
 import threading
 import time
 import pandas as pd
@@ -105,7 +106,7 @@ if os.path.exists(desfile):
         os.chmod(desfile, 2 ** 8 + 2 ** 7)  # rw by user owner only
 
 
-class easy_or(cmd.Cmd, Import, object):
+class easy_or(cmd.Cmd, Import, Undocumented, object):
     """Easy cx_Oracle interpreter for DESDM."""
 
     def set_messages(self):
